@@ -2,12 +2,18 @@
 A GET-HIP 2015-2016 session project
 
 # Scope and Requirements
-Define amount allotted per line item per month
-Option to repeat value month to month
 
-Budget creation?
-Budget tracking?
+User stories -> sample workflow and sample views -> database design and API design
 
+
+1. User stories
+2. Sample workflow
+3. Sample views
+4. Database design
+5. API design
+
+
+# Us
 
 
 # Roles
