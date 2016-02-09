@@ -22,11 +22,12 @@ Harley Waldstein
 - API design
 
 Dash Wedergren
-- Javascript
+- JavaScript
 - JSON creatiion, etc.
 
 Katie Gerot
-- ?
+- JavaScript and JQuery
+- Web Design
 
 Rohan Thakker
 - ?
