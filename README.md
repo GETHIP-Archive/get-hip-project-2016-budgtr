@@ -23,7 +23,8 @@ Harley Waldstein
 
 Dash Wedergren
 - JavaScript
-- JSON creatiion, etc.
+- API design
+- JSON creation, etc.
 
 Katie Gerot
 - JavaScript and JQuery
