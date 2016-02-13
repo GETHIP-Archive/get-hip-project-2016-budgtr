@@ -31,7 +31,8 @@ Katie Gerot
 - Web Design
 
 Rohan Thakker
-- Web Design/Bootstrap
+- Web Design
+- Bootstrap
 
 # Communication
 Slack...
