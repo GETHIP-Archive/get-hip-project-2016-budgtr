@@ -544,7 +544,16 @@ section.featured.inner {
 	max-height: 650px !important;
 	overflow: hidden;
 }
-
+.nav-dash{
+	padding-top: 100px;
+	width: 100% !important;
+	position: relative;
+	padding: 0;
+	max-height: 150px !important;
+	overflow: hidden;
+	margin-top:20px;
+	
+}
 .fullwidthbanner {
 	height: 650px;
 }
