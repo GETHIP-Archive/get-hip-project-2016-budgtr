@@ -4,6 +4,12 @@ import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.moxy.json.MoxyJsonConfig;
 import org.glassfish.jersey.server.ResourceConfig;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.avaje.ebean.Ebean;
+import com.avaje.ebean.EbeanServer;
+import com.avaje.ebean.TxRunnable;
 
 import java.io.IOException;
 import java.net.URI;
@@ -12,9 +18,10 @@ import java.util.Map;
 
 import javax.ws.rs.ext.ContextResolver;
 
-public class Main {
+public class App {
 	// Base URI the Grizzly HTTP server will listen on
 	public static final URI BASE_URI = URI.create("http://localhost:8080/rest/");
+	private static Logger logger = LoggerFactory.getLogger(App.class);
 
 	/**
 	 * Main method.
@@ -24,8 +31,11 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		try {
+			testDatabaseConnection();
+			
 			final HttpServer server = startServer();
 
+			logger.info("Jersey app started with WADL available at " + BASE_URI.toString() + "application.wadl");
 			System.out.println(String.format(
 					"Jersey app started with WADL available at %sapplication.wadl\nStop the application by hitting enter",
 					BASE_URI));
@@ -35,7 +45,15 @@ public class Main {
 			server.shutdownNow();
 
 		} catch (IOException ex) {
-			System.out.print("IO Exception");
+			System.out.print("There was an exception in the main method.");
+		}
+	}
+
+	private static void testDatabaseConnection() throws IOException {
+		EbeanServer defaultDb = Ebean.getDefaultServer();
+		if (defaultDb.getAutoTune() == null){
+			logger.error("Cannot reach default database.");
+			throw new IOException("Cannot reach default database.");
 		}
 	}
 

@@ -66,6 +66,18 @@
 			<artifactId>avaje-ebeanorm-mavenenhancer</artifactId>
 			<version>4.9.1</version>
 		</dependency>
+
+		<!-- SLF4J -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.16</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.16</version>
+		</dependency>
 	</dependencies>
 
 	<build>
