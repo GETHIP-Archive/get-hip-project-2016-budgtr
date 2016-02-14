@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Version;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import com.avaje.ebean.Model;
 import com.avaje.ebean.annotation.CreatedTimestamp;
@@ -15,6 +16,7 @@ import com.avaje.ebean.annotation.UpdatedTimestamp;
 /**
  * Customer entity bean.
  */
+@XmlRootElement
 @Entity
 @Table(name = "transaction")
 public class Transaction extends Model {
@@ -42,5 +44,4 @@ public class Transaction extends Model {
 
 	@Column(length = 1000)
 	String comments;
-
 }
