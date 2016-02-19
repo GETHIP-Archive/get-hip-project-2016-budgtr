@@ -29,7 +29,7 @@ public class MyResource {
 			public void run() {
 
 				Transaction t = new Transaction();
-				t.name = "Test Name";
+				t.description = "Test Name";
 
 				Ebean.save(t);
 			}

@@ -6,17 +6,15 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import com.avaje.ebean.Ebean;
-import com.avaje.ebean.TxRunnable;
-
 import io.waldstein.gethip.budgtr.model.Transaction;
 
-@Path("transaction")
+@Path("/{username}/transaction")
 public class TransactionResource {
 
 	@GET
     @Produces(MediaType.APPLICATION_JSON)
     public Transaction getTransaction() {
-        if (Transaction.find.all().isEmpty()) return new Transaction();
+        if (Transaction.find.all().isEmpty()) return null;
         else return Transaction.find.all().get(0);
     }
 	
@@ -25,11 +23,12 @@ public class TransactionResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Transaction createTestTransaction() {
 		Transaction  t = new Transaction();
-		t.name = "test";
+		t.description = "test";
 		
 		Ebean.save(t);
 		
 		return t;
-		
     }
+	
+	
 }
