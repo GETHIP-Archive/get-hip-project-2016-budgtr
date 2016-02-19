@@ -33,14 +33,15 @@ public class Transaction extends Model {
 
 	// TODO: figure out mapping
 	public Category category;
+	
+	@Column(length = 100)
+	public String userId;
 
 	public long amountInCents;
 
 	@Column(length = 1000)
 	public String description;
 	
-	
-
 	@Id
 	public Long id;
 	
