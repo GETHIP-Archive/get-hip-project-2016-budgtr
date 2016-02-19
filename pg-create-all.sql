@@ -1,5 +1,5 @@
 create table category (
-  id                            bigserial not null,
+  id                            int not null auto_increment,
   description                   varchar(255),
   amount_in_cents               bigint,
   version                       bigint not null,
@@ -9,7 +9,7 @@ create table category (
 );
 
 create table goal (
-  id                            bigserial not null,
+  id                            int not null auto_increment,
   category_id                   bigint,
   amount_in_cents               bigint,
   version                       bigint not null,
@@ -20,7 +20,7 @@ create table goal (
 );
 
 create table transaction (
-  id                            bigserial not null,
+  id                            int not null auto_increment,
   user_id                       bigint,
   date                          date,
   payee                         varchar(100),
@@ -33,7 +33,7 @@ create table transaction (
 );
 
 create table user (
-  id                            bigserial not null,
+  id                            int not null auto_increment,
   first_name                    varchar(100),
   last_name                     varchar(100),
   email                         varchar(100),
