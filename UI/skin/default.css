@@ -63,6 +63,8 @@ a:hover {
    border-color: #35A49C;
 }
 
+
+
 /* contact */
 .validation {
 	color:#35A49C;
@@ -75,4 +77,7 @@ a:hover {
 
 a.scrollup{
 	background:#35A49C;
+}
+#loginpage {
+	color:#fff; 
 }

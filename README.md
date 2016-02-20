@@ -1,6 +1,12 @@
 # Budgtr
 A GET-HIP 2015-2016 session project
 
+# Database Migrations
+Note, Ebean will create scripts that destroy the existing database and create a new one. They need to be run manually for the application to work. Also, production sql scripts will need to be made and run by hand.
+
+The word user is reserved in PostgreSQL, so any scripts with the word user must have that work in quotation marks.
+
+
 # Scope and Requirements
 
 User stories -> sample workflow and sample views -> database design and API design
@@ -31,7 +37,8 @@ Katie Gerot
 - Web Design
 
 Rohan Thakker
-- ?
+- Web Design
+- Bootstrap
 
 # Communication
 Slack...

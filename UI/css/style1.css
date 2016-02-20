@@ -1,11 +1,13 @@
-/*Google font (Lato)*/
+/* ==== Google font ==== */
 @import url('http://fonts.googleapis.com/css?family=Lato:400,300,700,900');
-/*fontawesome*/
+/* === fontawesome === */
 @import url('font-awesome.css');
-/*overwrite bootstrap standard*/
+/* ==== overwrite bootstrap standard ==== */
 @import url('overwrite.css');
 @import url('animate.css');
-/*General*/
+/*==========================================================================
+  General
+  ========================================================================== */
 body {
 	color:#777;
 	background: #f7f7f7;
@@ -81,7 +83,9 @@ a:hover {
 	text-transform: uppercase;
 }
 
-/*Misc & Adjust*/
+/*==========================================================================
+  Misc & Adjust 
+ ========================================================================== */
 .row {
 	z-index: 9999;
 }
@@ -136,17 +140,9 @@ a:hover {
 .normalize-font-top {
 	padding-top: 25px;
 }
-body {
-    width:100%;
-    background:#e6e6e6;
-}
-#chart {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width:100%;
-    height:100%;
-}
+
+
+
 /* --- float --- */
 .float-left {
 	float: left;
@@ -275,6 +271,9 @@ body {
 .mar-top40 {
 	margin-top: 40px;
 }
+.mar-top150{
+	margin-top: 150px;
+}
 
 
 /* bottom */
@@ -306,6 +305,9 @@ body {
 }
 .mar-bot40 {
 	margin-bottom: 40px;
+}
+.mar-bot200 {
+	margin-bottom: 200px; 
 }
 
 
@@ -548,6 +550,7 @@ section.featured.inner {
 	max-height: 650px !important;
 	overflow: hidden;
 }
+
 .fullwidthbanner {
 	height: 650px;
 }
@@ -1040,6 +1043,18 @@ a.socialIcon:hover, .socialHoverClass {
 	border-bottom: 4px solid;
 }
 
+body {
+	background-color: #70B9B0;
+}
+body {
+	color: #fff;
+}
+#signuplink {
+	color: #fff;
+}
+
+
+
 /* ========================================
 Media queries
 ========================================= */
@@ -1089,4 +1104,5 @@ Media queries
 	.stats .col-md-3 {
 		margin-bottom: 30px;
 	}
+}
 }
