@@ -1,7 +1,4 @@
-alter table goal drop foreign key fk_goal_category_id;
-
-alter table transaction drop foreign key fk_transaction_user_id;
-drop index ix_transaction_user_id on transaction;
+alter table goal drop foreign key fk_goal_category_id_id;
 
 drop table if exists category;
 

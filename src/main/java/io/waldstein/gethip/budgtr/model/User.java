@@ -11,6 +11,7 @@ import javax.persistence.Table;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.avaje.ebean.Ebean;
 import com.avaje.ebean.Model;
 import com.avaje.ebean.annotation.CreatedTimestamp;
 import com.avaje.ebean.annotation.UpdatedTimestamp;
@@ -48,4 +49,8 @@ public class User extends Model {
 	Timestamp whenUpdated;
 	
 	public static final Finder<Long, User> find = new Finder<>(User.class);
+	
+	public void save(){
+		Ebean.save(this);
+	}
 }

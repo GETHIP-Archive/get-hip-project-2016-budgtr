@@ -11,6 +11,7 @@ import javax.persistence.Table;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.avaje.ebean.Ebean;
 import com.avaje.ebean.Model;
 import com.avaje.ebean.annotation.CreatedTimestamp;
 import com.avaje.ebean.annotation.UpdatedTimestamp;
@@ -54,7 +55,10 @@ public class Transaction extends Model {
 	@UpdatedTimestamp
 	Timestamp whenUpdated;
 
-	// TODO: add constructor that takes user argument
+	public Transaction(long userId){
+		this.user = User.find.where().idEq(userId).findUnique();
+		Ebean.save(this);
+	}
 	
 	/**
 	 * Convenience Finder for 'active record' style. Finder is public static

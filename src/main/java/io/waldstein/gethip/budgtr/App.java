@@ -9,6 +9,9 @@ import org.slf4j.LoggerFactory;
 
 import com.avaje.ebean.Ebean;
 import com.avaje.ebean.EbeanServer;
+import com.avaje.ebean.RawSqlBuilder;
+
+import io.waldstein.gethip.budgtr.model.User;
 
 import java.io.IOException;
 import java.net.URI;
@@ -37,7 +40,8 @@ public class App {
 			logger.info("Jersey app started with WADL available at " + BASE_URI.toString() + "application.wadl");
 			logger.info("Stop the application by hitting enter");
 
-			// TODO: replace with Thread.currentThread().join(); and close application with CTRL-C
+			// TODO: replace with Thread.currentThread().join(); and close
+			// application with CTRL-C
 			System.in.read();
 			server.shutdownNow();
 
@@ -47,8 +51,13 @@ public class App {
 	}
 
 	private static void testDatabaseConnection() throws IOException {
+		// TODO: I don't think this does what I think this does.
+		/*
+		String sql = "SELECT CURRENT_TIMESTAMP;";
+		RawSqlBuilder.parse(sql).create();
+		*/
 		EbeanServer defaultDb = Ebean.getDefaultServer();
-		if (defaultDb.getAutoTune() == null){
+		if (defaultDb.getAutoTune() == null) {
 			logger.error("Cannot reach default database.");
 			throw new IOException("Cannot reach default database.");
 		}
