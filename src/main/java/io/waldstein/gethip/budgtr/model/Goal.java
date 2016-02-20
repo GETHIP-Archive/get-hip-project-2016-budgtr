@@ -19,7 +19,7 @@ import com.avaje.ebean.annotation.UpdatedTimestamp;
 public class Goal {
 
 	@OneToOne // TODO: define that goal needs category by category doesn't need goal 
-	public Category category;
+	public Category categoryId;
 	
 	public long amountInCents;
 	
