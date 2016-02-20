@@ -1,9 +1,5 @@
 create table category (
-<<<<<<< HEAD:mysql-create-all.sql
   id                            bigint auto_increment not null,
-=======
-  id                            int not null auto_increment,
->>>>>>> bb705d99d4953c2fc876d38a121c2f33283317d9:pg-create-all.sql
   description                   varchar(255),
   amount_in_cents               bigint,
   version                       bigint not null,
@@ -13,11 +9,7 @@ create table category (
 );
 
 create table goal (
-<<<<<<< HEAD:mysql-create-all.sql
   id                            bigint auto_increment not null,
-=======
-  id                            int not null auto_increment,
->>>>>>> bb705d99d4953c2fc876d38a121c2f33283317d9:pg-create-all.sql
   category_id                   bigint,
   amount_in_cents               bigint,
   version                       bigint not null,
@@ -28,11 +20,7 @@ create table goal (
 );
 
 create table transaction (
-<<<<<<< HEAD:mysql-create-all.sql
   id                            bigint auto_increment not null,
-=======
-  id                            int not null auto_increment,
->>>>>>> bb705d99d4953c2fc876d38a121c2f33283317d9:pg-create-all.sql
   user_id                       bigint,
   date                          date,
   payee                         varchar(100),
@@ -45,11 +33,7 @@ create table transaction (
 );
 
 create table user (
-<<<<<<< HEAD:mysql-create-all.sql
   id                            bigint auto_increment not null,
-=======
-  id                            int not null auto_increment,
->>>>>>> bb705d99d4953c2fc876d38a121c2f33283317d9:pg-create-all.sql
   first_name                    varchar(100),
   last_name                     varchar(100),
   email                         varchar(100),
