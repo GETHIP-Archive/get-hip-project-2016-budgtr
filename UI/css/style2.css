@@ -170,7 +170,7 @@ body {
 /* ---- padding ---- */
 /* top */
 .pad-top0 {
-	padding-top:;
+	padding-top: 0;
 }
 .pad-top5 {
 	padding-top: 5px;
@@ -350,7 +350,6 @@ section.section {
 .navbar {
 	line-height: 100px;
 	height: 100px;
-	background-color: rgba(0,0,0,0.3);
 	display: block;
 	vertical-align: middle;
 	text-align: center;
@@ -491,7 +490,7 @@ section.featured.inner {
 	overflow: hidden;
 	opacity: 0;
 	cursor: pointer;
-	color: rgba(0,0,0,0.8);
+	color: rgba(79,130,124,0.8);
 	text-shadow: 1px 1px 0 rgba(255,255,255,0.3);
 	-webkit-transition: all .3s ease;
 	-moz-transition: all .3s ease;
