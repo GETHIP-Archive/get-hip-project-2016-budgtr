@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 
 import com.avaje.ebean.Ebean;
 import com.avaje.ebean.EbeanServer;
-import com.avaje.ebean.TxRunnable;
 
 import java.io.IOException;
 import java.net.URI;
@@ -36,9 +35,7 @@ public class App {
 			final HttpServer server = startServer();
 
 			logger.info("Jersey app started with WADL available at " + BASE_URI.toString() + "application.wadl");
-			System.out.println(String.format(
-					"Jersey app started with WADL available at %sapplication.wadl\nStop the application by hitting enter",
-					BASE_URI));
+			logger.info("Stop the application by hitting enter");
 
 			// TODO: replace with Thread.currentThread().join(); and close application with CTRL-C
 			System.in.read();

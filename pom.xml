@@ -45,6 +45,13 @@
 			<version>9.4.1207</version>
 		</dependency>
 
+		<!-- MySQL -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.6</version>
+		</dependency>
+
 		<!-- Ebean -->
 		<dependency>
 			<groupId>org.avaje.ebeanorm</groupId>
@@ -106,8 +113,8 @@
 				<version>2.5.1</version>
 				<inherited>true</inherited>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 			<plugin>
