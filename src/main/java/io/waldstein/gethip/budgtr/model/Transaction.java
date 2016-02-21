@@ -11,7 +11,6 @@ import javax.persistence.Table;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.avaje.ebean.Ebean;
 import com.avaje.ebean.Model;
 import com.avaje.ebean.annotation.CreatedTimestamp;
 import com.avaje.ebean.annotation.UpdatedTimestamp;
@@ -24,27 +23,27 @@ import com.avaje.ebean.annotation.UpdatedTimestamp;
 @Table(name = "transaction")
 public class Transaction extends Model {
 
+	@Id
+	public Long id;
+	
+	public Date date;
+	
+	// TODO: figure out mapping
+	public Category category;
+	
+	public long amountInCents;
+	
+	@Column(length = 1000)
+	public String description;
+	
 	@ManyToOne
 	public User user;
-
-	public Date date;
 
 	@Column(length = 100)
 	public String payee;
 
-	// TODO: figure out mapping
-	public Category category;
 	
-	@Column(length = 100)
-	public String userId;
-
-	public long amountInCents;
-
-	@Column(length = 1000)
-	public String description;
 	
-	@Id
-	public Long id;
 	
 	@Version
 	Long version;
@@ -55,11 +54,16 @@ public class Transaction extends Model {
 	@UpdatedTimestamp
 	Timestamp whenUpdated;
 
+	/**
+	 * 
+	 * 
+	 * @param userId
+	 */
 	public Transaction(long userId){
+		super();
 		this.user = User.find.where().idEq(userId).findUnique();
-		Ebean.save(this);
 	}
-	
+
 	/**
 	 * Convenience Finder for 'active record' style. Finder is public static
 	 * class in com.avaje.ebean.Model
