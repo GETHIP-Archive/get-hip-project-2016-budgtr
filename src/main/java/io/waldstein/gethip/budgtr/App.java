@@ -6,6 +6,7 @@ import org.glassfish.jersey.moxy.json.MoxyJsonConfig;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.bridge.SLF4JBridgeHandler;
 
 import com.avaje.ebean.Ebean;
 import com.avaje.ebean.EbeanServer;
@@ -29,14 +30,10 @@ public class App {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) {
-		
-		// Configure logging so Jersey exceptions are passed to stderr with the
-		// rest of the logs
-		System.setProperty("java.util.logging.config.file", "log.properties");
+
+		configureLogging();
 
 		try {
-			testDatabaseConnection();
-
 			final HttpServer server = startServer();
 
 			logger.info("Jersey app started with WADL available at " + BASE_URI.toString() + "application.wadl");
@@ -52,17 +49,14 @@ public class App {
 		}
 	}
 
-	private static void testDatabaseConnection() throws IOException {
-		// TODO: I don't think this does what I think this does.
-		/*
-		 * String sql = "SELECT CURRENT_TIMESTAMP;";
-		 * RawSqlBuilder.parse(sql).create();
-		 */
-		EbeanServer defaultDb = Ebean.getDefaultServer();
-		if (defaultDb.getAutoTune() == null) {
-			logger.error("Cannot reach default database.");
-			throw new IOException("Cannot reach default database.");
-		}
+	private static void configureLogging() {
+		// Configure logging so Jersey exceptions are passed to stderr with the
+		// rest of the logs
+		System.setProperty("java.util.logging.config.file", "log.properties");
+
+		// Jersey uses java.util.logging - bridge to slf4
+		SLF4JBridgeHandler.removeHandlersForRootLogger();
+		SLF4JBridgeHandler.install();
 	}
 
 	/**
