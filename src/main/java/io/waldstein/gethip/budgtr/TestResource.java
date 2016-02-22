@@ -12,7 +12,6 @@ import io.waldstein.gethip.budgtr.model.User;
 
 @Path("test")
 public class TestResource {
-
 	
 	@POST
 	@Path("create-test-user")

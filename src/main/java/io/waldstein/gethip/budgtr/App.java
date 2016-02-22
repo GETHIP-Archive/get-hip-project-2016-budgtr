@@ -8,9 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.bridge.SLF4JBridgeHandler;
 
-import com.avaje.ebean.Ebean;
-import com.avaje.ebean.EbeanServer;
-
 import java.io.IOException;
 import java.net.URI;
 import java.util.HashMap;
