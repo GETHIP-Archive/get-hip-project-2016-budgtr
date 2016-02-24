@@ -43,8 +43,9 @@ public class UserResource {
 
 	@DELETE
 	@Produces(MediaType.APPLICATION_JSON)
-	public Boolean deleteUser(@QueryParam("id") long id){
+	public User deleteUser(@QueryParam("id") long id){
 		User u = User.find.where().eq("id", id).findUnique();
-		return Ebean.delete(u);
+		Ebean.delete(u);
+		return u;
 	};
 }
