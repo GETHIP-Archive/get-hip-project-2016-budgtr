@@ -1,4 +1,4 @@
-var database_url = "/rest";
+var database_url = "http://localhost:8080/rest";
 function category(requestType, endpoint, data){
 	switch(requestType){
 		case "get":

@@ -47,5 +47,24 @@ public class User extends Model {
 	@UpdatedTimestamp
 	Timestamp whenUpdated;
 	
+	public void id(long id){
+		this.id = id;
+	}
+
+	public void firstName(String firstName){
+		this.firstName = firstName;
+	}
+
+	public void lastName(String lastName){
+		this.lastName = lastName;
+	}
+
+	public void email(String email){
+		this.email = email;
+	}
+
+	public void password(String password){
+		this.password = password;
+	}
 	public static final Finder<Long, User> find = new Finder<>(User.class);
 }
