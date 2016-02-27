@@ -25,7 +25,7 @@ public class Goal {
 	
 	
 	@Id
-	public Long id;
+	public long id;
 
 	@Version
 	Long version;
