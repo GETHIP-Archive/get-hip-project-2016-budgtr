@@ -1,12 +1,11 @@
 package io.waldstein.gethip.budgtr.model;
 
 import java.sql.Timestamp;
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -35,8 +34,9 @@ public class User extends Model {
 	@Column(length = 100)
 	public String password;
 	
-	@OneToMany
-	public Set<Transaction> transactions;
+	public List<Transaction> transactions;
+
+	public List<Goal> goals;
 	
 	@Version
 	Long version;
