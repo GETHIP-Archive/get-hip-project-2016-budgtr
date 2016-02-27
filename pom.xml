@@ -105,6 +105,19 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>io.waldstein.gethip.budgtr.App</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+
+			<plugin>
 				<groupId>org.avaje.ebeanorm</groupId>
 				<artifactId>avaje-ebeanorm-mavenenhancer</artifactId>
 				<version>4.9.1</version>
