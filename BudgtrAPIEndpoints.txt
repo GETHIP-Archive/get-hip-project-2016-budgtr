@@ -1,0 +1,22 @@
+/transaction (show)
+	/read/:id
+	/create
+	/update/:id
+	/delete/:id
+
+/user (account properties)
+	/create
+	/update (account properties)
+	/delete/:id
+
+/goal
+	/create
+	/read/:id
+	/update/:id
+	/delete/:id
+
+/category
+	/create
+	/read/:id
+	/update/:id
+	/delete/:id
