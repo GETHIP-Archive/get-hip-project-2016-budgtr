@@ -104,19 +104,46 @@
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<configuration>
-					<archive>
-						<manifest>
-							<addClasspath>true</addClasspath>
-							<mainClass>io.waldstein.gethip.budgtr.App</mainClass>
-						</manifest>
-					</archive>
-				</configuration>
-			</plugin>
-
+			<!-- Maven Assembly Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <finalName>budgtr-${project.version}</finalName>
+                    <archive>
+                        <manifest>
+                            <mainClass>io.waldstein.gethip.budgtr.App</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            
+            <!-- Maven Dependency Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals><goal>copy-dependencies</goal></goals>
+                    </execution>
+                </executions>
+            </plugin>
+        
+        	<!-- Avaje EbeanORM MavenEnhancer -->
 			<plugin>
 				<groupId>org.avaje.ebeanorm</groupId>
 				<artifactId>avaje-ebeanorm-mavenenhancer</artifactId>
@@ -135,6 +162,8 @@
 					</execution>
 				</executions>
 			</plugin>
+			
+			<!-- Maven Compiler Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -145,6 +174,8 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+			
+			<!-- Exec Maven Plugin -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
@@ -161,6 +192,11 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		
+		
+		
+		
+		
 		<pluginManagement>
 			<plugins>
 				<!--This plugin's configuration is used to store Eclipse m2e settings 
