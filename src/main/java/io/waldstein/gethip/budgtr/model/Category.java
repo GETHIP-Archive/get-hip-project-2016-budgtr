@@ -1,6 +1,7 @@
 package io.waldstein.gethip.budgtr.model;
 
 import java.sql.Timestamp;
+import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -18,10 +19,8 @@ import com.avaje.ebean.annotation.UpdatedTimestamp;
 public class Category {
 	
 	public String description;
-	
+
 	public long amountInCents;
-	
-	
 
 	@Id
 	public Long id;
