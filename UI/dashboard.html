@@ -257,8 +257,7 @@
 $( document ).ready(function(){
     $.ajax({
         method: "GET",
-        url: "http://localhost:8080/rest/transactions?userId=2",
-        data: {userId: 2},
+        url: "http://budgtr.nyc2.do.waldstein.io/rest/transactions?userId=2",
         done: function(response) {
             $("#transactionsTableBody").empty();
             $.each(response.data, function (transaction) {
