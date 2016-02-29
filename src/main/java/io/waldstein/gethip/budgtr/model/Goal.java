@@ -39,4 +39,8 @@ public class Goal {
 
 	
 	public static final Finder<Long, Goal> find = new Finder<>(Goal.class);
+
+	public Goal(){
+		super();
+	}
 }

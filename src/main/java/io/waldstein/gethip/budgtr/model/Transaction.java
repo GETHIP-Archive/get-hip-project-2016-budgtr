@@ -65,6 +65,10 @@ public class Transaction extends Model {
 		User createuser = User.find.where().idEq(user).findUnique();
 		this.userId = createuser.id;
 	}
+	
+	public Transaction(){
+		super();
+	}
 
 	/**
 	 * Convenience Finder for 'active record' style. Finder is public static

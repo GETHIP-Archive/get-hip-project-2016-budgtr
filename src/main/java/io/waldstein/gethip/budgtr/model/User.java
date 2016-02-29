@@ -67,4 +67,8 @@ public class User extends Model {
 		this.password = password;
 	}
 	public static final Finder<Long, User> find = new Finder<>(User.class);
+	
+	public User(){
+		super();
+	}
 }

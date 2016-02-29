@@ -33,4 +33,8 @@ public class Category {
 	Timestamp whenUpdated;
 	
 	public static final Finder<Long, Category> find = new Finder<>(Category.class);
+	
+	public Category(){
+		super();
+	}
 }
