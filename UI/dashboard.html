@@ -259,10 +259,7 @@ $( document ).ready(function(){
         method: "GET",
         url: "http://budgtr.nyc2.do.waldstein.io/rest/transactions?userId=2",
         done: function(response) {
-            $("#transactionsTableBody").empty();
-            $.each(response.data, function (transaction) {
-                console.log(transaction);
-            });
+            console.log(response);
         }
     })
 });
