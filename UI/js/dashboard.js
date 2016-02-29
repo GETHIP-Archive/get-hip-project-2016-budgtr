@@ -18,6 +18,13 @@ $(document).ready(function () {
                 "</td><td>" + '$' + transaction.dollars + '.' + transaction.cents +
                 "</td></tr>");
         });
+
+        $("#createTransactionSubmitBtn").on("click", function(){
+            $("#createTransactionForm").submit(function(){
+                return false;
+            });
+            location.reload();
+        });
     });
 
     /*
