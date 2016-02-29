@@ -261,7 +261,7 @@ $(document).ready(function() {
         url: "http://budgtr.nyc2.do.waldstein.io/rest/transactions?userId=2"
     }).done(function(data) {
         console.log(data);
-        response = JSON.parse(data);
+        response = JSON.parse(JSON.stringify(data));
         console.log(response);
         $("#transactionsTableBody").empty();
         $.each(response.data, function(id, transaction){
