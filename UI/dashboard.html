@@ -264,7 +264,7 @@ $(document).ready(function() {
         response = JSON.parse(JSON.stringify(data));
         console.log(response);
         $("#transactionsTableBody").empty();
-        $.each(response.data, function(id, transaction){
+        $.each(response, function(id, transaction){
           $("#transactionsTableBody tr:last").after("<tr><td>transaction.date</td><td>transaction.payee</td><td>transaction.amountInCents</td><td>in</td><td>libero</td></tr>");
         });
     });
