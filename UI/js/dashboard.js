@@ -21,7 +21,7 @@ $(document).ready(function () {
 
         $("#createTransactionSubmitBtn").on("click", function(){
             $("#createTransactionForm").submit(function(){
-                return false;
+                return true;
             });
             location.reload();
         });
