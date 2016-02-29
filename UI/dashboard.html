@@ -255,13 +255,12 @@
 <script src="js/main.js"></script>
 <script type="text/javascript">
 $( document ).ready(function(){
-    $.ajax({
-        method: "GET",
-        url: "http://budgtr.nyc2.do.waldstein.io/rest/transactions?userId=2",
-        done: function(response) {
-            console.log(response);
-        }
-    })
+$.ajax({
+    method: "GET",
+    url: "http://budgtr.nyc2.do.waldstein.io/rest/transactions?userId=2"
+}).done(function(response) {
+    console.log(response);
+});
 });
 </script>
 <script src="../../dist/js/bootstrap.min.js"></script>
