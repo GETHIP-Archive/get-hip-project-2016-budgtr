@@ -15,7 +15,7 @@ $(document).ready(function () {
                 "</td><td>" + transaction.payee +
                 "</td><td>" + transaction.category +
                 "</td><td>" + transaction.description +
-                "</td><td>" + '$' + transaction.dollars + transaction.cents +
+                "</td><td>" + '$' + transaction.dollars + '.' + transaction.cents +
                 "</td></tr>");
         });
     });
