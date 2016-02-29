@@ -265,7 +265,7 @@ $(document).ready(function() {
         console.log(response);
         $("#transactionsTableBody").empty();
         $.each(response, function(id, transaction){
-          $("#transactionsTableBody tr:last").after("<tr><td>transaction.date</td><td>transaction.payee</td><td>transaction.amountInCents</td><td>in</td><td>libero</td></tr>");
+          $("#transactionsTableBody").append("<tr><td>transaction.date</td><td>transaction.payee</td><td>transaction.amountInCents</td><td>in</td><td>libero</td></tr>");
         });
     });
 });
