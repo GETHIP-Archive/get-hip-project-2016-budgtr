@@ -26,6 +26,7 @@ public class TestResource {
 		return user;
 	}
 	
+	/*
 	@POST
 	@Path("create-test-transaction")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -39,4 +40,5 @@ public class TestResource {
 		t.save();
 		return t;
 	}
+	*/
 }
