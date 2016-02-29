@@ -1,3 +1,4 @@
+service budgtr stop
 git pull
-mvn clean dependency:copy-dependencies package
+mvn clean compile package
 java -jar target/budgtr-<version>.jar

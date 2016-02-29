@@ -10,22 +10,23 @@ create table category (
 
 create table goal (
   id                            bigint auto_increment not null,
-  category_id_id                bigint,
+  category_id                   varchar(255),
   amount_in_cents               bigint,
+  end_date                      datetime(6),
+  user_id                       varchar(255),
   version                       bigint not null,
   when_created                  datetime(6) not null,
   when_updated                  datetime(6) not null,
-  constraint uq_goal_category_id_id unique (category_id_id),
   constraint pk_goal primary key (id)
 );
 
 create table transaction (
   id                            bigint auto_increment not null,
-  date                          date,
-  amount_in_cents               bigint,
+  date                          datetime(6)(100),
+  user_id                       bigint(1000),
+  amount_in_cents               bigint(1000),
   description                   varchar(1000),
-  user_id                       bigint,
-  payee                         varchar(100),
+  payee                         varchar(1000),
   version                       bigint not null,
   when_created                  datetime(6) not null,
   when_updated                  datetime(6) not null,
@@ -43,9 +44,4 @@ create table user (
   when_updated                  datetime(6) not null,
   constraint pk_user primary key (id)
 );
-
-alter table goal add constraint fk_goal_category_id_id foreign key (category_id_id) references category (id) on delete restrict on update restrict;
-
-alter table transaction add constraint fk_transaction_user_id foreign key (user_id) references user (id) on delete restrict on update restrict;
-create index ix_transaction_user_id on transaction (user_id);
 

@@ -4,7 +4,6 @@ import java.sql.Timestamp;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -17,12 +16,14 @@ import com.avaje.ebean.annotation.UpdatedTimestamp;
 @Entity
 @Table(name = "goal")
 public class Goal {
-
-	@OneToOne // TODO: define that goal needs category by category doesn't need goal 
-	public Category categoryId;
+ 
+	public String categoryId;
 	
 	public long amountInCents;
 	
+	public Timestamp endDate;
+
+	public String userId;
 	
 	@Id
 	public long id;

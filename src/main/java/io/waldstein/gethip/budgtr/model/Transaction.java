@@ -1,12 +1,10 @@
 package io.waldstein.gethip.budgtr.model;
 
-import java.sql.Date;
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -24,25 +22,28 @@ import com.avaje.ebean.annotation.UpdatedTimestamp;
 public class Transaction extends Model {
 
 	@Id
-	public Long id;
+	public long id;
 	
-	public Date date;
+	@Column (length = 100)
+	public Timestamp date;
 	
+	@Column (length = 1000)
+	public long userId;
+
 	// TODO: figure out mapping
 	public Category category;
 	
+	@Column(length = 1000)
 	public long amountInCents;
 	
 	@Column(length = 1000)
 	public String description;
 	
-	@ManyToOne
+	@Column(length = 1000)
+	public String payee;
+	
 	public User user;
 
-	@Column(length = 100)
-	public String payee;
-
-	
 	
 	
 	@Version
@@ -59,9 +60,10 @@ public class Transaction extends Model {
 	 * 
 	 * @param userId
 	 */
-	public Transaction(long userId){
+	public Transaction(long user){
 		super();
-		this.user = User.find.where().idEq(userId).findUnique();
+		User createuser = User.find.where().idEq(user).findUnique();
+		this.userId = createuser.id;
 	}
 
 	/**
