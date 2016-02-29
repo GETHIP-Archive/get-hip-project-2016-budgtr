@@ -3,6 +3,7 @@ package io.waldstein.gethip.budgtr;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.moxy.json.MoxyJsonConfig;
+import org.glassfish.jersey.moxy.json.MoxyJsonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -67,6 +68,7 @@ public class App {
 		// providers
 		// in io.waldstein.gethip.budgtr package
 		final ResourceConfig rc = new ResourceConfig().packages("io.waldstein.gethip.budgtr")
+				.register(MoxyJsonFeature.class)
 				.register(createMoxyJsonResolver());
 
 		// create and start a new instance of grizzly http server
@@ -86,17 +88,17 @@ public class App {
 	 * 
 	 * @return Moxy state context resolver
 	 */
-	public static ContextResolver<MoxyJsonConfig> createMoxyJsonResolver() {
-		// create Moxy JSON config
-		final MoxyJsonConfig moxyJsonConfig = new MoxyJsonConfig();
-		Map<String, String> namespacePrefixMapper = new HashMap<String, String>(1);
-
-		// set namespace
+	public static ContextResolver<MoxyJsonConfig> createMoxyJsonResolver() {		
+		final Map<String, String> namespacePrefixMapper = new HashMap<String, String>();
 		namespacePrefixMapper.put("http://www.w3.org/2001/XMLSchema-instance", "xsi");
-		moxyJsonConfig.setNamespacePrefixMapper(namespacePrefixMapper).setNamespaceSeparator(':');
-
-		//
-		return moxyJsonConfig.resolver();
+		 
+		final MoxyJsonConfig moxyJsonConfig = new MoxyJsonConfig()
+		            .setNamespacePrefixMapper(namespacePrefixMapper)
+		            .setNamespaceSeparator(':');
+		 
+		final ContextResolver<MoxyJsonConfig> jsonConfigResolver = moxyJsonConfig.resolver();
+		
+		return jsonConfigResolver;
 	}
 
 	/*
