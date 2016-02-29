@@ -1,5 +1,6 @@
 package io.waldstein.gethip.budgtr.model;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 import javax.persistence.Entity;
@@ -21,7 +22,7 @@ public class Goal {
 	
 	public long amountInCents;
 	
-	public Timestamp endDate;
+	public Date endDate;
 
 	public String userId;
 	

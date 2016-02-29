@@ -1,8 +1,8 @@
 package io.waldstein.gethip.budgtr.model;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -24,22 +24,18 @@ public class Transaction extends Model {
 	@Id
 	public long id;
 	
-	@Column (length = 100)
-	public Timestamp date;
+	public Date date;
 	
-	@Column (length = 1000)
 	public long userId;
 
-	// TODO: figure out mapping
-	public Category category;
+	public String category;
 	
-	@Column(length = 1000)
-	public long amountInCents;
+	public long dollars;
 	
-	@Column(length = 1000)
+	public long cents;
+	
 	public String description;
 	
-	@Column(length = 1000)
 	public String payee;
 	
 	public User user;
@@ -62,8 +58,8 @@ public class Transaction extends Model {
 	 */
 	public Transaction(long user){
 		super();
-		User createuser = User.find.where().idEq(user).findUnique();
-		this.userId = createuser.id;
+		User u = User.find.where().idEq(user).findUnique();
+		this.userId = u.id;
 	}
 	
 	public Transaction(){

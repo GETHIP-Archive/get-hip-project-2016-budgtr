@@ -3,275 +3,262 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
     <title>Budgt</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/isotope.css" media="screen" />
-    <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+    <meta name="author" content="">
+
+    <link rel="stylesheet" type="text/css" href="css/isotope.css" media="screen"/>
+    <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.css">
     <link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" href="skin/default.css">
     <link rel="stylesheet" href="skin/dashboard.css">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
+    <!-- TODO -->
+    <link rel="icon" href="">
+
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/skin/dashboard.css" rel="stylesheet">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script src="js/dashboard.js"></script>
 </head>
 
 <body>
-    <section id="header" class="appear"></section>
-    <div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="fa fa-bars color-white"></span>
-                </button>
-                <h1><a class="navbar-brand" href="index.html" data-0="line-height:90px;" data-300="line-height:50px;">Budgtr</a></h1>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="#section-about">About</a></li>
-                    <li><a href="#section-contact">Contact</a></li>
-                    <li><a href="Login.html">Log In</a></li>
-                    <li><a href="dashboard.html">Dashboard</a></li>
-                </ul>
-            </div>
+<section id="header" class="appear"></section>
+<div class="navbar navbar-fixed-top" role="navigation"
+     data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);"
+     data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="fa fa-bars color-white"></span>
+            </button>
+            <h1><a class="navbar-brand" href="index.html" data-0="line-height:90px;"
+                   data-300="line-height:50px;">Budgtr</a></h1>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="index.html#section-about">About</a></li>
+                <li><a href="index.html#section-contact">Contact</a></li>
+                <li><a href="login.html">Log In</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
         </div>
     </div>
-    </section>
-    <div class="container-fluid">
-        <h1 class="page-header">Dashboard</h1>
-        <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-                        <p>%</p>
-                    </div>
-                </div>
-                <h4>Label</h4>
-                <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-                        <p>%</p>
-                    </div>
-                </div>
-                <h4>Label</h4>
-                <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-                        <p>%</p>
-                    </div>
-                </div>
-                <h4>Label</h4>
-                <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-                        <p>%</p>
-                    </div>
-                </div>
-                <h4>Label</h4>
-                <span class="text-muted">Something else</span>
-            </div>
-        </div>
-        <h2 class="sub-header">Transactions</h2>
-        <div id="dialog" title="Basic dialog">
-            <p>This is an animated dialog which is useful for displaying information.</p>
-        </div>
-        <a id="transaction">&nbsp Add Transaction&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </a>
-        <a id="goal">Add Goal</a>
-        <div class="table-responsive">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Name</th>
-                        <th>Amount</th>
-                        <th>Description</th>
-                        <th>Payee</th>
-                    </tr>
-                </thead>
-                <tbody id="transactionsTableBody">
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>sit</td>
-                    </tr>
-                    <tr>
-                        <td>1,002</td>
-                        <td>amet</td>
-                        <td>consectetur</td>
-                        <td>adipiscing</td>
-                        <td>elit</td>
-                    </tr>
-                    <tr>
-                        <td>1,003</td>
-                        <td>Integer</td>
-                        <td>nec</td>
-                        <td>odio</td>
-                        <td>Praesent</td>
-                    </tr>
-                    <tr>
-                        <td>1,003</td>
-                        <td>libero</td>
-                        <td>Sed</td>
-                        <td>cursus</td>
-                        <td>ante</td>
-                    </tr>
-                    <tr>
-                        <td>1,004</td>
-                        <td>dapibus</td>
-                        <td>diam</td>
-                        <td>Sed</td>
-                        <td>nisi</td>
-                    </tr>
-                    <tr>
-                        <td>1,005</td>
-                        <td>Nulla</td>
-                        <td>quis</td>
-                        <td>sem</td>
-                        <td>at</td>
-                    </tr>
-                    <tr>
-                        <td>1,006</td>
-                        <td>nibh</td>
-                        <td>elementum</td>
-                        <td>imperdiet</td>
-                        <td>Duis</td>
-                    </tr>
-                    <tr>
-                        <td>1,007</td>
-                        <td>sagittis</td>
-                        <td>ipsum</td>
-                        <td>Praesent</td>
-                        <td>mauris</td>
-                    </tr>
-                    <tr>
-                        <td>1,008</td>
-                        <td>Fusce</td>
-                        <td>nec</td>
-                        <td>tellus</td>
-                        <td>sed</td>
-                    </tr>
-                    <tr>
-                        <td>1,009</td>
-                        <td>augue</td>
-                        <td>semper</td>
-                        <td>porta</td>
-                        <td>Mauris</td>
-                    </tr>
-                    <tr>
-                        <td>1,010</td>
-                        <td>massa</td>
-                        <td>Vestibulum</td>
-                        <td>lacinia</td>
-                        <td>arcu</td>
-                    </tr>
-                    <tr>
-                        <td>1,011</td>
-                        <td>eget</td>
-                        <td>nulla</td>
-                        <td>Class</td>
-                        <td>aptent</td>
-                    </tr>
-                    <tr>
-                        <td>1,012</td>
-                        <td>taciti</td>
-                        <td>sociosqu</td>
-                        <td>ad</td>
-                        <td>litora</td>
-                    </tr>
-                    <tr>
-                        <td>1,013</td>
-                        <td>torquent</td>
-                        <td>per</td>
-                        <td>conubia</td>
-                        <td>nostra</td>
-                    </tr>
-                    <tr>
-                        <td>1,014</td>
-                        <td>per</td>
-                        <td>inceptos</td>
-                        <td>himenaeos</td>
-                        <td>Curabitur</td>
-                    </tr>
-                    <tr>
-                        <td>1,015</td>
-                        <td>sodales</td>
-                        <td>ligula</td>
-                        <td>in</td>
-                        <td>libero</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</body>
+</div>
 
-</html>
+<div class="container-fluid">
+    <h1 class="page-header">Dashboard</h1>
+    <div class="row placeholders">
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0"
+                     aria-valuemax="100" style="width:100%">
+                    <p>100%</p>
+                </div>
+            </div>
+            <h4>Rent</h4>
+            <span class="text-muted">You're reached this month's goal!</span>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0"
+                     aria-valuemax="100" style="width:25%">
+                    <p>25%</p>
+                </div>
+            </div>
+            <h4>Groceries</h4>
+            <span class="text-muted">You're on track to match last month's progress.</span>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="progress">
+                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0"
+                     aria-valuemax="100" style="width:10%">
+                    <p>10%</p>
+                </div>
+            </div>
+            <h4>Car payment</h4>
+            <span class="text-muted">You're behind on your goal!</span>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0"
+                     aria-valuemax="100" style="width:60%">
+                    <p>60%</p>
+                </div>
+            </div>
+            <h4>Student loan payment</h4>
+            <span class="text-muted">You're on track to match last month's progress.</span>
+        </div>
+    </div>
+    <h2 class="sub-header">Transactions</h2>
+    <div id="dialog" title="Basic dialog">
+        <p>This is an animated dialog which is useful for displaying information.</p>
+    </div>
+    <a id="transaction">&nbsp Add Transaction&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </a>
+    <a id="goal">Add Goal</a>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Payee</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Amount</th>
+            </tr>
+            </thead>
+            <tbody id="transactionsTableBody">
+            <tr>
+                <td>1,001</td>
+                <td>Lorem</td>
+                <td>ipsum</td>
+                <td>dolor</td>
+                <td>sit</td>
+            </tr>
+            <tr>
+                <td>1,002</td>
+                <td>amet</td>
+                <td>consectetur</td>
+                <td>adipiscing</td>
+                <td>elit</td>
+            </tr>
+            <tr>
+                <td>1,003</td>
+                <td>Integer</td>
+                <td>nec</td>
+                <td>odio</td>
+                <td>Praesent</td>
+            </tr>
+            <tr>
+                <td>1,003</td>
+                <td>libero</td>
+                <td>Sed</td>
+                <td>cursus</td>
+                <td>ante</td>
+            </tr>
+            <tr>
+                <td>1,004</td>
+                <td>dapibus</td>
+                <td>diam</td>
+                <td>Sed</td>
+                <td>nisi</td>
+            </tr>
+            <tr>
+                <td>1,005</td>
+                <td>Nulla</td>
+                <td>quis</td>
+                <td>sem</td>
+                <td>at</td>
+            </tr>
+            <tr>
+                <td>1,006</td>
+                <td>nibh</td>
+                <td>elementum</td>
+                <td>imperdiet</td>
+                <td>Duis</td>
+            </tr>
+            <tr>
+                <td>1,007</td>
+                <td>sagittis</td>
+                <td>ipsum</td>
+                <td>Praesent</td>
+                <td>mauris</td>
+            </tr>
+            <tr>
+                <td>1,008</td>
+                <td>Fusce</td>
+                <td>nec</td>
+                <td>tellus</td>
+                <td>sed</td>
+            </tr>
+            <tr>
+                <td>1,009</td>
+                <td>augue</td>
+                <td>semper</td>
+                <td>porta</td>
+                <td>Mauris</td>
+            </tr>
+            <tr>
+                <td>1,010</td>
+                <td>massa</td>
+                <td>Vestibulum</td>
+                <td>lacinia</td>
+                <td>arcu</td>
+            </tr>
+            <tr>
+                <td>1,011</td>
+                <td>eget</td>
+                <td>nulla</td>
+                <td>Class</td>
+                <td>aptent</td>
+            </tr>
+            <tr>
+                <td>1,012</td>
+                <td>taciti</td>
+                <td>sociosqu</td>
+                <td>ad</td>
+                <td>litora</td>
+            </tr>
+            <tr>
+                <td>1,013</td>
+                <td>torquent</td>
+                <td>per</td>
+                <td>conubia</td>
+                <td>nostra</td>
+            </tr>
+            <tr>
+                <td>1,014</td>
+                <td>per</td>
+                <td>inceptos</td>
+                <td>himenaeos</td>
+                <td>Curabitur</td>
+            </tr>
+            <tr>
+                <td>1,015</td>
+                <td>sodales</td>
+                <td>ligula</td>
+                <td>in</td>
+                <td>libero</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
 <a href="#header" class="scrollup"><i class="fa fa-chevron-up"></i></a>
-<script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="js/jquery.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script src="js/bootstrap.min.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+<script src="js/jquery.easing.1.3.js"></script>
 <script src="js/jquery.isotope.min.js"></script>
 <script src="js/jquery.nicescroll.min.js"></script>
-<script src="js/fancybox/jquery.fancybox.pack.js"></script>
-<script src="js/skrollr.min.js"></script>
 <script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
 <script src="js/jquery.localscroll-1.2.7-min.js"></script>
-<script src="js/stellar.js"></script>
 <script src="js/jquery.appear.js"></script>
-<script src="js/validate.js"></script>
-<script src="js/main.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-    $.ajax({
-        method: "GET",
-        dateType: "json",
-        url: "http://budgtr.nyc2.do.waldstein.io/rest/transactions?userId=2"
-    }).done(function(data) {
-        console.log(data);
-        response = JSON.parse(JSON.stringify(data));
-        console.log(response);
-        $("#transactionsTableBody").empty();
-        $.each(response, function(id, transaction) {
-            $("#transactionsTableBody").append("<tr><td>" + transaction.date + "</td><td>" + transaction.payee + "</td><td>" + '$' + transaction.amountInCents + "</td><td>in</td><td>libero</td></tr>");
-        });
-    });
-});
+<script src="js/fancybox/jquery.fancybox.pack.js"></script>
 
-'$' + parseFloat(transaction.amountInCents, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString()
-</script>
-<script src="../../dist/js/bootstrap.min.js"></script>
-<script src="../../assets/js/vendor/holder.min.js"></script>
-<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+<script src="js/skrollr.min.js"></script>
+<script src="js/stellar.js"></script>
+<script src="js/validate.js"></script>
+
+<script src="js/main.js"></script>
+
+
+<!-- TODO find missing file: <script src="../../assets/js/vendor/holder.min.js"></script> -->
+<!-- TODO find missing file: <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+</body>
+</html>
