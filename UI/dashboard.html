@@ -260,7 +260,7 @@ $(document).ready(function() {
         url: "http://budgtr.nyc2.do.waldstein.io/rest/transactions?userId=2"
     }).done(function(response) {
         $("#transactionsTableBody").empty();
-        $.each(response.data, function(transaction){
+        $.each(response.data, function(id, transaction){
           $("#transactionsTableBody tr:last").after("<tr><td>transaction.date</td><td>transaction.payee</td><td>transaction.amountInCents</td><td>in</td><td>libero</td></tr>");
         });
     });
