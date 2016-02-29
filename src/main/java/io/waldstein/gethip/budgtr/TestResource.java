@@ -1,13 +1,10 @@
 package io.waldstein.gethip.budgtr;
 
-import java.sql.Date;
-
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import io.waldstein.gethip.budgtr.model.Transaction;
 import io.waldstein.gethip.budgtr.model.User;
 
 @Path("test")
