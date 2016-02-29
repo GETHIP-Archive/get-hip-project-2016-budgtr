@@ -28,6 +28,64 @@
 </head>
 
 <body>
+
+<!-- Button trigger modal
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#transactionModal">
+    Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="transactionModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <form action="http://budgtr.nyc2.do.waldstein.io/rest/transactions" method="post">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="transactionModalLabel">Create transaction</h4>
+                </div>
+
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="inputDate">Date</label>
+                        <input name="date" type="date" class="form-control" id="inputDate" placeholder="Select the transaction date">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPayee">Payee</label>
+                        <input name="payee" type="text" class="form-control" id="inputPayee" placeholder="Select the transaction date">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputCategory">Category</label>
+                        <input name="category" type="text" class="form-control" id="inputCategory" placeholder="Select the transaction date">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDescription">Description</label>
+                        <input name="description" type="text" class="form-control" id="inputDescription" placeholder="Select the transaction date">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDollars">Dollars</label>
+                        <input name="dollars" type="text" class="form-control" id="inputDollars" placeholder="Select the transaction date">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputCents">Cents</label>
+                        <input name="cents" type="text" class="form-control" id="inputCents" placeholder="Select the transaction date">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputUserId">User Id</label>
+                        <input name="userId" type="text" class="form-control" id="inputUserId" placeholder="Select the transaction date">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Create transaction</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <section id="header" class="appear"></section>
 <div class="navbar navbar-fixed-top" role="navigation"
      data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);"
@@ -97,10 +155,7 @@
         </div>
     </div>
     <h2 class="sub-header">Transactions</h2>
-    <div id="dialog" title="Basic dialog">
-        <p>This is an animated dialog which is useful for displaying information.</p>
-    </div>
-    <a id="transaction">&nbsp Add Transaction&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </a>
+    <button type="button" id="transaction" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#transactionModal">Add Transaction</button>
     <a id="goal">Add Goal</a>
     <div class="table-responsive">
         <table class="table table-striped">
