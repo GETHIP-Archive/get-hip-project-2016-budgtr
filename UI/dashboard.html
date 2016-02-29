@@ -257,6 +257,7 @@
 $(document).ready(function() {
     $.ajax({
         method: "GET",
+        dateType: "json",
         url: "http://budgtr.nyc2.do.waldstein.io/rest/transactions?userId=2"
     }).done(function(data) {
         console.log(data);
