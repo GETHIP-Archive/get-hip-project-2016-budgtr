@@ -264,11 +264,13 @@ $(document).ready(function() {
         response = JSON.parse(JSON.stringify(data));
         console.log(response);
         $("#transactionsTableBody").empty();
-        $.each(response, function(id, transaction){
-          $("#transactionsTableBody").append("<tr><td>" + transaction.date + "</td><td>" + transaction.payee + "</td><td>" + transaction.amountInCents + "</td><td>in</td><td>libero</td></tr>");
+        $.each(response, function(id, transaction) {
+            $("#transactionsTableBody").append("<tr><td>" + transaction.date + "</td><td>" + transaction.payee + "</td><td>" + '$' + parseFloat(transaction.amountInCents, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString() + "</td><td>in</td><td>libero</td></tr>");
         });
     });
 });
+
+'$' + parseFloat(transaction.amountInCents, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString()
 </script>
 <script src="../../dist/js/bootstrap.min.js"></script>
 <script src="../../assets/js/vendor/holder.min.js"></script>
