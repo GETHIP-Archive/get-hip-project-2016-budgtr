@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 
 import com.avaje.ebean.Ebean;
 
-import io.waldstein.gethip.budgtr.model.User;
+import io.waldstein.gethip.budgtr.model.*;
 
 @Path("/user")
 public class UserResource {
@@ -27,7 +27,10 @@ public class UserResource {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public User getUser(@QueryParam("id") long id) {
-		return User.find.where().eq("id", id).findUnique();
+		User u = User.find.where().eq("id", id).findUnique();	
+		u.goals = Goal.find.where().eq("user_id",u.id).findList();
+		u.transactions = Transaction.find.where().eq("user_id", u.id).findList();
+		return u;
 	};
 
 	@POST
