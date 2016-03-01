@@ -24,22 +24,21 @@ public class App {
 	 * Main method.
 	 * 
 	 * @param args
+	 * @throws InterruptedException 
 	 * @throws IOException
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 
 		configureLogging();
 
 		try {
+			@SuppressWarnings("unused")
 			final HttpServer server = startServer();
 
 			logger.info("Jersey app started with WADL available at " + BASE_URI.toString() + "application.wadl");
-			logger.info("Stop the application by hitting enter");
+			logger.info("Stop the application by hitting CTRL-C");
 
-			// TODO: replace with Thread.currentThread().join(); and close
-			// application with CTRL-C
-			System.in.read();
-			server.shutdownNow();
+			Thread.currentThread().join();
 
 		} catch (IOException ex) {
 			System.out.print("There was an exception in the main method.");
