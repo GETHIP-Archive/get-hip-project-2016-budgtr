@@ -34,6 +34,8 @@ public class GoalResource {
     	Goal c = Goal.find.where().eq("id", id).findUnique();
     	c.categoryId = g.categoryId;
         c.amountInCents = g.amountInCents;
+        c.endDate = g.endDate;
+        c.userId = g.userId;
     	Ebean.update(c);
     	return c;
     }
