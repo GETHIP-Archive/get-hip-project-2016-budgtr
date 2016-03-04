@@ -15,6 +15,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.ws.rs.ext.ContextResolver;
+import javax.ws.rs.container.ContainerRequestContext;
+import javax.ws.rs.container.ContainerResponseContext;
+import javax.ws.rs.container.ContainerResponseFilter;
 
 public class App {
 	// Base URI the Grizzly HTTP server will listen on
@@ -69,15 +72,15 @@ public class App {
 		// in io.waldstein.gethip.budgtr package
 		final ResourceConfig rc = new ResourceConfig().packages("io.waldstein.gethip.budgtr")
 				.register(MoxyJsonFeature.class)
-				.register(createMoxyJsonResolver());
-
+				.register(createMoxyJsonResolver())
+				.register(CORS.class);
+		
 		// create and start a new instance of grizzly http server
 		// exposing the Jersey application at BASE_URI
 		HttpServer server = GrizzlyHttpServerFactory.createHttpServer(BASE_URI, rc);
 
 		// add shutdown hook
 		createShutdownHook(server);
-
 		server.start();
 
 		return server;
@@ -100,7 +103,6 @@ public class App {
 		
 		return jsonConfigResolver;
 	}
-
 	/*
 	 * Adds shutdown hook to JVM that closes server when the JVM closes
 	 */
