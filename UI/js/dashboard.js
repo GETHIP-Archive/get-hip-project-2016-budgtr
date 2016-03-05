@@ -2,7 +2,7 @@ $(document).ready(function () {
     $.ajax({
         method: "GET",
         dateType: "json",
-        url: "http://budgtr.nyc2.do.waldstein.io/rest/transactions?userId=1"
+        url: "http://budgtr.nyc2.do.waldstein.io/rest/transactions?userId=4"
     }).done(function (data) {
         console.log(data);
         var response = JSON.parse(JSON.stringify(data));
