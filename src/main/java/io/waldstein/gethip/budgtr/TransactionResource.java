@@ -29,7 +29,9 @@ public class TransactionResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Transaction createTransaction(@FormParam("date") String date, @FormParam("payee") String payee,
     		@FormParam("category") String category, @FormParam("description") String description, @FormParam("dollars") String dollars,
-    		@FormParam("cents") String cents, @FormParam("userId") String userId) {
+    		@FormParam("cents") String cents) {
+		String userId = "4";
+		
 		Transaction t = new Transaction();
 		t.date = new Date(System.currentTimeMillis());
 		t.payee = payee;
