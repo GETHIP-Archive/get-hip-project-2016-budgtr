@@ -20,11 +20,18 @@ $(document).ready(function () {
         });
 
         $("#createTransactionSubmitBtn").on("click", function(){
-            $("#createTransactionForm").submit(function(){
-                return true;
-            });
-            location.reload();
+            var formData = $("#createTransactionForm").serialize(); // your form's data
+            $.ajax({
+                    type: "POST",
+                    url: "http://budgtr.nyc2.do.waldstein.io/rest/transactions",
+                    data: formData //sends the data to the new page.
+                })
+                .done(function( msg ) {
+                    window.location.href = 'dashboard.html' // redirects the page when finished.
+                });
         });
+
+
     });
 
     /*
