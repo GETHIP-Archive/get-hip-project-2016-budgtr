@@ -30,6 +30,7 @@ public class TransactionResource {
     public Transaction createTransaction(@FormParam("date") String date, @FormParam("payee") String payee,
     		@FormParam("category") String category, @FormParam("description") String description, @FormParam("dollars") String dollars,
     		@FormParam("cents") String cents) {
+		
 		String userId = "4";
 		
 		Transaction t = new Transaction();
@@ -39,8 +40,8 @@ public class TransactionResource {
 		t.description = description;
 		t.dollars = Long.parseLong(dollars.trim());
 		t.cents = Long.parseLong(cents.trim());
-		t.userId = Long.parseLong(userId.trim());
-		t.user = User.find.where().idEq(userId).findUnique();
+		t.userId = 4;
+		t.user = User.find.where().idEq(4).findUnique();
 		t.save();
 		return t;
     }
